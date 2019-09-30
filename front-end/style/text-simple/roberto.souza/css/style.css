@@ -1,0 +1,44 @@
+header h1 {
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-weight: bold;
+    background-color: tomato;
+    margin: 0%;
+}
+
+body {
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+}
+
+main {
+    margin-top: 80px;
+    margin-left: 0px;
+    margin-bottom: 80px;
+    margin-right: 0px;
+}
+
+main h1 {
+    color: black;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0%;
+}
+
+main h2 {
+    color: gray;
+    margin-top: 0px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#banner {
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 320px;
+}
