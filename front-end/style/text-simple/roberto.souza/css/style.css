@@ -1,14 +1,14 @@
 header h1 {
     color: white;
     text-align: center;
-    padding: 1.5rem;
+    padding: 2.1rem;
     font-weight: bold;
     background-color: tomato;
-    margin: 0%;
+    margin: 0px;
 }
 
 body {
-    margin: 0%;
+    margin: 0px;
     font-family: 'Roboto', sans-serif;
     font-size: 21px;
 }
@@ -25,10 +25,11 @@ main h1 {
     width: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0%;
+    margin-bottom: 0px;
 }
 
 main h2 {
+    font-size: 27px;
     color: gray;
     margin-top: 0px;
     width: 700px;
@@ -41,4 +42,21 @@ main h2 {
     background-size: cover;
     width: 100vw;
     height: 320px;
+}
+
+p {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: tomato;
+}
+
+a:hover {
+    color: tomato;
+    text-decoration: underline;
 }
