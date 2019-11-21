@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body id="topo">
+    <h1>ping(8) - Linux man page</h1>
+    <h2>Sumário</h2>
+    <ol>
+        <li><a href="#Name">Name</a></li>
+        <li><a href="#Synopsis">Synopsis</a></li>
+        <li><a href="#Description">Description</a></li>
+        <li><a href="#Options">Options</a></li>
+        <li><a href="#Icmp Packet Details">Icmp Packet Details</a></li>
+        <li><a href="#Duplicate and Damaged Packets">Duplicate and Damaged Packets</a></li>
+        <li><a href="#Trying Different Data Patterns">Trying Different Data Patterns</a></li>
+        <li><a href="#Ttl Details">Ttl Details</a></li>
+        <li><a href="#Bugs">Bugs</a></li>
+        <li><a href="#See Also">See Also</a></li>
+        <li><a href="#History">History</a></li>
+        <li><a href="#Security">Security</a></li>
+        <li><a href="#Availability">Availability</a></li>
+        <li><a href="#Referenced By">Referenced By</a></li>
+    </ol>
+    <h2 id="Name">Name</h2>
+    <a href="#topo">topo</a>
+    <p>ping, ping6 - send ICMP ECHO_REQUEST to network hosts</p>
+    <h2 id="Synopsis">Synopsis</h2>
+    <a href="#topo">topo</a>
+    <p> <b>ping [ -LRUbdfnqrvVaAB] [ -c <i>count</i> ] [ -i <i>interval</i> ] [ -l <i>preload</i> ] [ -p <i>pattern</i> ] [ -s <i>packetsize</i> ] [ -t <i>ttl</i> ]
+            [ -w <i>deadline</i> ] [ -F <i>flowlabel</i> ] [ -I <i>interface</i> ] [ -M <i>hint</i> ] [ -Q >{ <i>tos</i> }] [ -S <i>sndbuf</i> ] [ -T <i>timestamp option</i> ]
+            [ -W <i>timeout</i> ] [ hop ...] <i>destination</i> </b></p>
+    <h2>Description</h2>
+    <a href="#topo">topo</a>
+    <p><b>ping</b> uses the ICMP protocol's mandatory ECHO_REQUEST datagram to elicit an ICMP ECHO_RESPONSE from a host or gateway. ECHO_REQUEST datagrams (''pings'') have an IP and ICMP header, followed by a struct timeval and then an arbitrary number of ''pad'' bytes used to fill out the packet.</p>
+
+    <h2 id="Options">Options</h2>
+    <a href="#topo">topo</a>
+    <dl>
+        <dt><b>-a</b>
+            <dd>Audible ping.</dd>
+        </dt>
+        <dt><b>-A</b>
+            <dd>Adaptive ping. Interpacket interval adapts to round-trip time, so that effectively not more than one (or more, if preload is set) unanswered probes present in the network. Minimal interval is 200msec for not super-user. On networks with low rtt this mode is essentially equivalent to flood mode.</dd>
+        </dt>
+        <dt><b>-b</b>
+            <dd>Allow pinging a broadcast address.</dd>
+        </dt>
+        <dt><b>-B</b>
+            <dd>Do not allow <b></b> to change source address of probes. The address is bound to one selected when <b></b> starts.</dd>
+        </dt>
+        <dt><b>-c <i>count</i></b>
+            <dd>Stop after sending count ECHO_REQUEST packets. With deadline option, <b>ping</b> waits for count ECHO_REPLY packets, until the timeout expires.</dd>
+        </dt>
+        <dt><b>-F <i>flow label</i></b>
+            <dd>    Allocate and set 20 bit flow label on echo request packets. (Only <b>ping6</b>). If value is zero, kernel allocates random flow label.
+            </dd>
+        </dt>
+        <dt><b>-f</b>
+            <dd>Flood ping. For every ECHO_REQUEST sent a period ''.'' is printed, while for ever ECHO_REPLY received a backspace is printed. This provides a rapid display of how many packets are being dropped. If interval is not given, it sets interval to zero and outputs packets as fast as they come back or one hundred times per second, whichever is more. Only the super-user may use this option with zero interval.</dd>
+        </dt>
+        <dt><b>-i <i>interval</i></b>
+            <dd>Wait interval seconds between sending each packet. The default is to wait for one second between each packet normally, or not to wait in flood mode. Only super-user may set interval to values less 0.2 seconds.</dd>
+        </dt>
+        <dt><b>-I <i>interface address</i></b>
+            <dd>Set source address to specified interface address. Argument may be numeric IP address or name of device. When pinging IPv6 link-local address this option is required.</dd>
+        </dt>
+        <dt><b>-I <i>preload</i>
+        </b>
+            <dd>If preload is specified, <b>ping</b> sends that many packets not waiting for reply. Only the super-user may select preload more than 3.</dd>
+        </dt>
+        <dt><b>-L</b>
+            <dd>Suppress loopback of multicast packets. This flag only applies if the <b></b> destination is a multicast address.</dd>
+        </dt>
+        <dt><b>-n</b>
+            <dd>Numeric output only. No attempt will be made to lookup symbolic names for host addresses.</dd>
+        </dt>
+        <dt><b>-p <i>pattern</i></b>
+            <dd>ou may specify up to 16 ''pad'' bytes to fill out the packet you send. This is useful for diagnosing data-dependent problems in a network. For example, -p ff will cause the sent packet to be filled with all ones.</dd>
+        </dt>
+        <dt><b>-Q <i>tos</i></b>
+            <dd>Set Quality of Service -related bits in ICMP datagrams. tos can be either decimal or hex number. Traditionally (RFC1349), these have been interpreted as: 0 for reserved (currently being redefined as congestion control), 1-4 for Type of Service and 5-7 for Precedence. Possible settings for Type of Service are: minimal cost: 0x02, reliability: 0x04, throughput: 0x08, low delay: 0x10. Multiple TOS bits should not be set simultaneously. Possible settings for special Precedence range from priority (0x20) to net control (0xe0). You must be root (CAP_NET_ADMIN capability) to use Critical or higher precedence value. You cannot set bit 0x01 (reserved) unless ECN has been enabled in the kernel. In RFC2474, these fields has been redefined as 8-bit Differentiated Services (DS), consisting of: bits 0-1 of separate data (ECN will be used, here), and bits 2-7 of Differentiated Services Codepoint (DSCP).</dd>
+        </dt>
+        <dt><b>-q</b>
+            <dd>Quiet output. Nothing is displayed except the summary lines at startup time and when finished.</dd>
+        </dt>
+        <dt><b>-R</b>
+            <dd>Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST packet and displays the route buffer on returned packets. Note that the IP header is only large enough for nine such routes. Many hosts ignore or discard this option.</dd>
+        </dt>
+        <dt><b>-r</b>
+            <dd>Bypass the normal routing tables and send directly to a host on an attached interface. If the host is not on a directly-attached network, an error is returned. This option can be used to ping a local host through an interface that has no route through it provided the option -I is also used.</dd>
+        </dt>
+        <dt><b>-s <i>packetsize</i></b>
+            <dd>Specifies the number of data bytes to be sent. The default is 56, which translates into 64 ICMP data bytes when combined with the 8 bytes of ICMP header data.</dd>
+        </dt>
+        <dt><b>-S <i>sndbuf</i></b>
+            <dd>Set socket sndbuf. If not specified, it is selected to buffer not more than one packet.</dd>
+        </dt>
+        <dt><b>-t <i>ttl</i></b>
+            <dd></dd>
+        </dt>
+        <dt><b>-T <i>timestamp option</i>
+        </b>
+            <dd>Set special IP timestamp options. timestamp option may be either tsonly (only timestamps), tsandaddr (timestamps and addresses) or tsprespec host1 [host2 [host3 [host4]]] (timestamp prespecified hops).</dd>
+        </dt>
+        <dt><b>-M <i>hint</i></b>
+            <dd>Select Path MTU Discovery strategy. hint may be either do (prohibit fragmentation, even local one), want (do PMTU discovery, fragment locally when packet size is large), or dont (do not set DF flag).</dd>
+        </dt>
+        <dt><b>-U</b>
+            <dd>Print full user-to-user latency (the old behaviour). Normally ping prints network round trip time, which can be different f.e. due to DNS failures.</dd>
+        </dt>
+        <dt><b></b>
+            <dd></dd>
+        </dt>
+        <dt><b>-v</b>
+            <dd>Verbose output.</dd>
+        </dt>
+        <dt><b>-V</b>
+            <dd>Show version and exit.</dd>
+        </dt>
+        <dt><b>-w <i>deadline</i></b>
+            <dd>Specify a timeout, in seconds, before ping exits regardless of how many packets have been sent or received. In this case ping does not stop after count packet are sent, it waits either for deadline expire or until count probes are answered or for some error notification from network</dd>
+        </dt>
+        <dt><b>-W <i>timeout</i>
+        </b>
+            <dd>Time to wait for a response, in seconds. The option affects only timeout in absense of any responses, otherwise ping waits for two RTTs.</dd>
+        </dt>
+    </dl>
+    <h2 id="Icmp Packet Details">Icmp Packet Details</h2>
+    <a href="#topo">topo</a>
+    <h2>Duplicate and Damaged Packets</h2>
+    <a href="#topo">topo</a>
+    <p><b>ping</b> will report duplicate and damaged packets. Duplicate packets should never occur, and seem to be caused by inappropriate link-level retransmissions. Duplicates may occur in many situations and are rarely (if ever) a good sign, although the presence of low levels of duplicates may not always be cause for alarm.</p>
+    <p>Damaged packets are obviously serious cause for alarm and often indicate broken hardware somewhere in the ping packet's path (in the network or in the hosts).</p>
+    <h2 id="Trying Different Data Patterns">Trying Different Data Patterns</h2>
+    <a href="#topo">topo</a>
+    <p>The (inter)network layer should never treat packets differently depending on the data contained in the data portion. Unfortunately, data-dependent problems have been known to sneak into networks and remain undetected for long periods of time. In many cases the particular pattern that will have problems is something that doesn't have sufficient ''transitions'', such as all ones or all zeros, or a pattern right at the edge, such as almost all zeros. It isn't necessarily enough to specify a data pattern of all zeros (for example) on the command line because the pattern that is of interest is at the data link level, and the relationship between what you type and what the controllers transmit can be complicated.</p>
+    <p>This means that if you have a data-dependent problem you will probably have to do a lot of testing to find it. If you are lucky, you may manage to find a file that either can't be sent across your network or that takes much longer to transfer than other similar length files. You can then examine this file for repeated patterns that you can test using the -p option of ping.</p>
+
+    <h2>Ttl Details</h2>
+    <a href="#topo">topo</a>
+    <p>The TTL value of an IP packet represents the maximum number of IP routers that the packet can go through before being thrown away. In current practice you can expect each router in the Internet to decrement the TTL field by exactly one.</p>
+    <p>The TCP/IP specification states that the TTL field for TCP packets should be set to 60, but many systems use smaller values (4.3 BSD uses 30, 4.2 used 15).</p>
+    <P>The maximum possible value of this field is 255, and most Unix systems set the TTL field of ICMP ECHO_REQUEST packets to 255. This is why you will find you can ''ping'' some hosts, but not reach them with telnet(1) or ftp(1).</P>
+    <P>In normal operation ping prints the ttl value from the packet it receives. When a remote system receives a ping packet, it can do one of three things with the TTL field in its response:</P>
+    <ul>
+        <li><i>In normal operation ping prints the ttl value from the packet it receives. When a remote system receives a ping packet, it can do one of three things with the TTL field in its response:</i></li>
+        <li><i>Set it to 255; this is what current Berkeley Unix systems do. In this case the TTL value in the received packet will be 255 minus the number of routers in the path from the remote system to the pinging host.</i></li>
+        <li><i>Set it to some other value. Some machines use the same value for ICMP packets that they use for TCP packets, for example either 30 or 60. Others may use completely wild values.</i></li>
+    </ul>
+    <h2 id="Bugs">Bugs</h2>
+    <a href="#topo">topo</a>
+    <ul>
+        <li><i>Many Hosts and Gateways ignore the RECORD_ROUTE option.</i></li>
+        <li><i>The maximum IP header length is too small for options like RECORD_ROUTE to be completely useful. There´s not much that that can be done about this, however.</i></li>
+        <li><i>Flood pinging is not recommended in general, and flood pinging the broadcast address should only be done under very controlled conditions.</i></li>
+    </ul>
+    <h2 id="See Also">See Also</h2>
+    <a href="#topo">topo</a>
+    <p>netstat(1), <a href="#topo">ifconfig(8)</a>.</p>
+    
+    <h2 id="History">History</h2>
+    <a href="#topo">topo</a>
+    <ul>
+        <li><i>The ping command appeared in 4.3BSD.</i></li>
+        <li><i>The version described here is its descendant specific to Linux.</i></li>
+    </ul>
+    <a href="#topo">topo</a><h2></h2>
+    <p><i> ping requires CAP_NET_RAWIO capability to be executed. It may be used as set-uid root. </i></p>
+    
+    <h2 id="Availability">Availability By</h2>
+    <a href="#topo">topo</a>
+    <p><i>ping is part of iputils package and the latest versions are available in source form at http://www.skbuff.net/iputils/iputils-current.tar.bz2.</i></p>
+    <h2 id="Referenced By">Referenced By</h2>
+    <a href="#topo">topo</a>
+    <p><a href="https://linux.die.net/man/8/arping">arping(8)</a>, <a href="https://linux.die.net/man/8/bing">bing(8)</a>, <a href="https://linux.die.net/man/8/clockdiff">clockdiff(8)</a>, <a href="https://linux.die.net/man/8/cytun">cytune(8)</a>, <a href="topo">fping(8)</a>, <a href="topo">hping2(8)</a>, <a href="#topo">hping3</a>(8), <a href="#topo">ipmiping</a>(8), <a href="#topo">ipsec_ikeping</a>(8), <a href="#topo">irdaping</a>(8), <a href="#topo">iwspy</a>(8), <a href="#topo">libval_shim</a>(3<a href="#topo">mtr</a>(8), <a href="#topo">omping</a>(8), href="#">oping(8), <a href="#topo">ping_selinux</a>(8), <a href="#topo">rdisc</a>(8), rds-ping(1), <a href="#topo">rmcpping</a>(8), <a href="#topo">sonar</a>(1), <a href="#topo">sonar</a>(6), <a href="#topo">tcptraceroute</a>(1), <a href="#topo">tping</a>(1), <a href="#topo">tracepath</a>(8), <a href="#topo">traceroute</a>(8), <a href="https://linux.die.net/man/1/virt-rescue">virt-rescue(1)</a></p>
+
+</body>
+</html>
