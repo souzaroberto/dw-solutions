@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- tags meta obrigatorias -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>BS Corretora</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<!-- Regiao do cabecalho -->
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand fonte-titulo" href="#">BS Corretora</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-item nav-link" href="#">Imóveis</a>
+                <a class="nav-item nav-link" data-toggle="modal" data-target="#modal-contato" href="#">Fale Conosco</a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<section id="titulo" class="pt-5 mt-3">
+    
+    <div>
+        <h2 class="fonte-titulo text-center">Imóveis de alta .classe, com .estilo</h2>
+    </div>
+    <input type="text" id="inputContent" placeholder="Digite uma descrição">
+    <input type="text" id="inputURL" placeholder="Digite a URL">
+    <button id="btnAdd">Inserir</button>
+
+</section>
+
+<!-- Regiao das imagens -->
+<main>
+    <section id="casas" class="bg-light pb-3">
+
+        <div class="container">
+            <div class="row justify-content-md-around justify-content-center" id="containerMain">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Regiao da casa em destaque -->
+    <section id="destaque" class="mt-2 jumbotron">
+        <div>
+            <div class="row">
+                <div class="col-3 align-items-center">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fonte-titulo">Destaque</h5>
+                            <p class="card-text">Casa em Ilha Bela. Venha conhecer essa perfeição da arquitetura!</p>
+                            <a href="#" class="btn btn-dark">Visitar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <img class="card-imagem-destaque rounded img-fluid img-thumbnail" src="../img/casa-destaque.jpg"
+                         alt="Foto da casa em destaque">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regiao dos depoimentos dos clientes -->
+    <section id="clientes">
+        <div>
+            <h2 class="fonte-titulo">Clientes</h2>
+
+            <ul class="list-unstyled">
+                <li class="media">
+                    <img src="../img/foto-cliente1.jpeg" class="mr-3 rounded" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">List-based media object</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </li>
+                <li class="media my-4">
+                    <img src="../img/foto-cliente2.jpeg" class="mr-3 rounded" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">List-based media object</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </li>
+                <li class="media">
+                    <img src="../img/foto-cliente3.jpeg" class="mr-3 rounded" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">List-based media object</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- Região dos planos de aluguéis -->
+    <h2 class="fonte-titulo">Planos de Aluguéis:</h2>
+    <section id="planos" class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <h3>Prata</h3>
+                    <ul class="list-group list-unstyled">
+                        <li class="list-group-item">1x</li>
+                        <li class="list-group-item">2x</li>
+                        <li class="list-group-item">3x</li>
+                        <li class="text-center pt-3"><button class="btn-dark text-center">Assinar</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <h3>Ouro</h3>
+                <ul class="list-group list-unstyled">
+                    <li class="list-group-item">1x</li>
+                    <li class="list-group-item">2x</li>
+                    <li class="list-group-item">3x</li>
+                    <li class="text-center pt-3"><button class="btn-dark text-center">Assinar</button></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Diamante</h3>
+                <ul class="list-group list-unstyled">
+                    <li class="list-group-item">1x</li>
+                    <li class="list-group-item">2x</li>
+                    <li class="list-group-item">3x</li>
+                    <li class="text-center pt-3"><button class="btn-dark text-center">Assinar</button></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-contato" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Fale conosco</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <textarea placeholder="Coloque eu texto aqui"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark">Enviar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+</main>
+</body>
+</html>
