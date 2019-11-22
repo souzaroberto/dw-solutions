@@ -1,0 +1,53 @@
+p {
+    color: darkslategrey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px
+}
+
+h1.text-center {
+    font-size: 30px;
+    color: darkblue;
+     
+}
+
+h1 a:any-link {
+    color: white;
+}
+
+h1 a:hover {
+    color: darkblue;
+}
+
+h2 {
+    font-size: 24px;
+    background-color: lightskyblue;
+    color: darkblue;
+}
+
+h2 a:any-link {
+    color: lightskyblue;
+}
+
+h2 a:hover {
+    color: darkblue;
+}
+
+a {
+    color: darkblue;
+    text-decoration: none
+}
+
+a:visited, a:hover {
+    color: darkblue;
+    text-decoration: underline
+}
+
+.text-center {
+    text-align: center;
+}
+
+div:last-child {
+    font-style: italic;
+    font-weight: bold;
+    text-align: center
+}
