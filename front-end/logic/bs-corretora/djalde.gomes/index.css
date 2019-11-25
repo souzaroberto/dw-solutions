@@ -1,0 +1,32 @@
+.fonte-titulo {
+    font-family: 'Pacifico', cursive;
+}
+
+.card-imagem-top {
+    height:200px;
+    object-fit:cover;
+    object-position: 0 60%;
+}
+
+.card-imagem {
+    width: 18rem;
+    object-fit:cover;
+    object-position: 0 60%;
+    margin-bottom: 25px;
+    
+
+}
+li img {
+    height:200px;
+    width: 18rem;
+    object-fit:cover;   
+}
+
+.new {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-style: italic;
+  background-color: black;
+  color:white;
+
+}
