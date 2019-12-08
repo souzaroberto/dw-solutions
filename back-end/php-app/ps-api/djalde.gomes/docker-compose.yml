@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  web:
+    container_name: web
+    image: php:7.3-apache
+    build: .
+    networks:
+      - app-network
+    ports:
+      - 8081:80
+    volumes:
+      - ./:/var/www/html/
+
+networks:
+  app-network:
+    driver: bridge

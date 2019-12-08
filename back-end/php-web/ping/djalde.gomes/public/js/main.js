@@ -1,6 +1,6 @@
 
-const ip = document.getElementById("1")
-const quant = document.getElementById("2")
+const ip = document.getElementById("ip")
+const quant = document.getElementById("quant")
 const submit = document.querySelector('input[type=submit]')
 const helloMessage = document.querySelector('#hello-message')
 
