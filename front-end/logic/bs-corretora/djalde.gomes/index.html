@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BS Corretora</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<!-- Regiao do cabecalho -->
+	<header class="bg-dark fixed-top">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand text-light fonte-titulo" href="#">BS Corretora</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Imóveis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#modal-falar" href="#">Fale Conosco</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="modal-falar" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Fale conosco</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <textarea placeholder="Digite seu texto" style="width: 100%"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-dark">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Regiao das imagens -->
+        <section id="casas">
+            <div>
+                <h2 class="fonte-titulo text-center pt-5 mt-3">Imóveis de alta .classe, com .estilo</h2>
+            </div>
+            <h1 id="este" class="new">Insira uma nova casa</h1>
+
+      <form id="frm">
+      Cidade: <input id="cidade" placeholder="Digite a cidade">
+      URL: <input id="url" placeholder="Digite a url">
+      Legenda: <input id="legenda" placeholder="Digite a legenda">
+    
+      <button onclick="inserirCasa()">Inserir</button>
+      <br><br>
+      </form>
+
+            <section id=secao></section>
+
+        <!-- Regiao da casa em destaque -->
+        <div class="jumbotron">
+          <div class="card mb-3" style="max-width: 900px;">
+  <div class="row no-gutters">
+    <div class="col-md-6">
+      <img src="https://abrilcasa.files.wordpress.com/2019/07/1-agra.jpg?quality=95&strip=info&w=1024&h=683" class="card-img" alt="..."style="height: 400px; width: 100%">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h2 class="card-title">Destaque</h2>
+        <p class="card-text">Casa em Ilha Bela.</p>
+       
+    </div>
+  </div>
+</div>
+        </div>
+        <div>
+        <a href="#" class="btn btn-primary">Marque uma visita</a>
+</div>
+        </div>
+        <!-- Regiao dos depoimentos dos clientes -->
+        <div>
+            <h2 class="fonte-titulo mt-3">Clientes</h2>
+
+            <ul class="list-unstyled">
+                <li class="media">
+                    <img src="http://s2.glbimg.com/jsaPuF7nO23vRxQkuJ_V3WgouKA=/e.glbimg.com/og/ed/f/original/2014/06/10/461777879.jpg"
+                        class="mr-3 rounded" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">List-based media object</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </li>
+                <li class="media my-4">
+                    <img src="https://osegredo.com.br/wp-content/uploads/2019/07/Essa-%C3%A9-a-pessoa-que-voc%C3%AA-N%C3%83O-deve-ser.jpg"
+                        class="mr-3 rounded" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">List-based media object</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </li>
+                <li class="media">
+                        <img src="https://www.jrmcoaching.com.br/wp-content/uploads/2019/03/pessoas-sutis.jpg"
+                            class="mr-3 rounded" alt="...">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">List-based media object</h5>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                            Cras
+                            purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                            nisi
+                            vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                      </li>
+            </ul>
+
+        </div>
+
+        <!-- Região dos planos de aluguéis -->
+        <h2 class="fonte-titulo" style="margin: 40px">Planos de Aluguéis:</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                        <div class="list-group">
+                                <button type="button" class="list-group-item list-group-item-action active bg-dark">
+                                  Prata
+                                </button>
+                                <button type="button" class="list-group-item list-group-item-action">1x</button>
+                                <button type="button" class="list-group-item list-group-item-action">2x</button>
+                                <button type="button" class="list-group-item list-group-item-action">3x</button>
+                                <li class="list-group-item text-center"><a href="#" class="btn btn-dark">Assinar</a></li>
+                              </div>
+                </div>
+                <div class="col-md-4">
+                        <div class="list-group">
+                                <button type="button" class="list-group-item list-group-item-action active bg-dark">
+                                  Ouro
+                                </button>
+                                <button type="button" class="list-group-item list-group-item-action">1x</button>
+                                <button type="button" class="list-group-item list-group-item-action">2x</button>
+                                <button type="button" class="list-group-item list-group-item-action">3x</button>
+                                <li class="list-group-item text-center"><a href="#" class="btn btn-dark">Assinar</a></li>
+                              </div>
+                </div>
+                <div class="col-md-4">
+                        <div class="list-group">
+                                <button type="button" class="list-group-item list-group-item-action active bg-dark">
+                                  Diamante
+                                </button>
+                                <button type="button" class="list-group-item list-group-item-action">1x</button>
+                                <button type="button" class="list-group-item list-group-item-action">2x</button>
+                                <button type="button" class="list-group-item list-group-item-action">3x</button>
+                                <li class="list-group-item text-center"><a href="#" class="btn btn-dark">Assinar</a></li>
+                              </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+
+</body>
+
+</html>
