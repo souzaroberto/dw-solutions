@@ -24,7 +24,7 @@ function linkshow_encode($result)
 {
   $intshow = [];
 
-  $regex = "//";
+  $regex = "/:\s+(.+):\s+.+\s+.+\s+.+\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+).+\s+.+\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+).+/";
   preg_match_all($regex, $result, $matches);
 
   foreach ($matches[1] as $index => $showint) {
