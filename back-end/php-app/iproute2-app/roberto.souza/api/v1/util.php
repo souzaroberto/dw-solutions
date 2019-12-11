@@ -17,34 +17,21 @@ function linkshow_encode($result)
       "ip" => $matches[6][$index],
     ];
   }
-
   return $linkshow;
 }
 
-function showint_encode($result)
+/* function showint_encode($result)
 {
   $intshow = [];
 
-  $regex = "/(RX):.+\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+).+\s+(TX):.+\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)/";
+  $regex = "//";
   preg_match_all($regex, $result, $matches);
 
   foreach ($matches[1] as $index => $showint) {
-    $intshow[] = [
-      "rx" => $matches[1][$index],
-      "bytes" => $matches[2][$index],
-      "packets" => $matches[3][$index],
-      "errors" => $matches[4][$index],
-      "dropped" => $matches[5][$index],
-      "tx" => $matches[6][$index],
-      "bytes" => $matches[7][$index],
-      "packets" => $matches[8][$index],
-      "errors" => $matches[9][$index],
-      "dropped" => $matches[10][$index],
-    ];
+
   }
 
   return $intshow;
-}
-
+}*/
 
 ?>
