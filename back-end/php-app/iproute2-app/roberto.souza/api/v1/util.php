@@ -1,7 +1,6 @@
 <?php
 
-function linkshow_encode($result)
-{
+function linkshow_encode($result) {
   $linkshow = [];
 
   $regex = "/(\d+):\s+(.+):.+\s+mtu\s+(\d+).+\s+state\s+(UP|DOWN|UNKNOWN).+\s+link\/\w+\s([a-zA-Z-0-9:]+).+\s+inet\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/\d{1,2})/";
@@ -18,20 +17,37 @@ function linkshow_encode($result)
     ];
   }
   return $linkshow;
-}
+};
 
-/* function showint_encode($result)
-{
-  $intshow = [];
+function showint_encode($result) {
 
   $regex = "/:\s+(.+):\s+.+\s+.+\s+.+\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+).+\s+.+\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+).+/";
-  preg_match_all($regex, $result, $matches);
+  preg_match($regex, $result, $matches);
 
-  foreach ($matches[1] as $index => $showint) {
-
-  }
+  $intshow = [
+    "name" => $matches[1],
+    "stats" => [
+      "rx" => [
+        "bytes" => $matches[2],
+        "packets" => $matches[3],
+        "errors" => $matches[4],
+        "dropped" => $matches[5],
+        "overrun" => "0",
+        "mcast" => "0",
+      ],
+      "tx" => [
+        "bytes" => $matches[6],
+        "packets" => $matches[7],
+        "errors" => $matches[8],
+        "dropped" => $matches[9],
+        "overrun" => "0",
+        "mcast" => "0",
+      ],
+    ]
+  ];
 
   return $intshow;
-}*/
+
+};
 
 ?>
