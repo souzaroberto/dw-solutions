@@ -1,4 +1,5 @@
 <?php
+
 require_once('database.php');
 
 $connection = connect();
